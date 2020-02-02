@@ -30,14 +30,40 @@ in html
         <nav>
             <hr width="50%" />
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a class="current" href="contact.html">Contact</a>
+            <a class="current" href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
         
         <br /><br />
         
-        <div id = "content">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfSMlM5qwewQ5xSWhXW3ktwnxgV2JKd1C0xqL-PH8lC9Jnjrg/viewform?embedded=true" width="641" height="947" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <!-- div with an id called content-->
+        <div class ="content">
+            <!-- Create the table to hold experience data --> 
+            <table>
+                <tr id="table header">
+                    <td><strong>Programming Languages</strong></td>
+                    <td><strong>Years Experience</strong></td>
+                </tr>
+                <tr class="table-row">
+                    <td>Java</td>
+                    <td>3</td>
+                </tr>
+                <tr class ="table-row">
+                    <td>C++</td>
+                    <td>2</td>
+                </tr>
+                <tr class="table-row">
+                    <td>PHP</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            
+            <ul>
+                <li><span class = "hobby">Video games</span>: I own four consoles and like all kinds of games but my favorite is The Legend of Zelda</li>
+                <li><span class = "hobby">Soccer</span>: I am part of a team and we play every Saturday. I'm the goalie. </li>
+                <li><span class = "hobby">Music</span>: I love all kind of music but my favorite is R&B and Pop.</li>
+                <li><span class = "hobby">Programming</span>: I spend at least two hours every day using and learning programming languages</li>
+            </ul>
         </div>
         
         <!-- This is the footer -->

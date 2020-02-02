@@ -54,6 +54,7 @@ footer {
     
 }
 
+
 table {
     margin: 0px auto;
 }
@@ -90,3 +91,6 @@ h1 {
     margin-bottom: 0px; 
 }
 
+.content {
+    text-align: center;
+}
