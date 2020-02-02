@@ -85,6 +85,10 @@ ul {
     color:yellow;
 }
 
+#content {
+    text-align: center;
+}
+
 h1 {
     font-family: Pacifico, cursive; 
     font-size: 4em;
