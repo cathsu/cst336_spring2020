@@ -27,10 +27,6 @@ nav a:hover { /*psuedo class*/
     padding-top: 5px; 
 }
 
-figure, div {
-    float:left;
-}
-
 #me, #welcomeText {
     float:left;
 }
