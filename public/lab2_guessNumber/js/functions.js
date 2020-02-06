@@ -41,7 +41,7 @@ function checkGuess() {
             winRecord ++;
             setGameOver();
             gameRecord();
-        } else if (guessCount == 2) {
+        } else if (guessCount == 7) {
             lastResult.innerHTML = 'Sorry, you lost!';
             lossRecord ++;
             setGameOver();
