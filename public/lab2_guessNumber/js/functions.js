@@ -41,7 +41,7 @@ function checkGuess() {
             winRecord ++;
             setGameOver();
             gameRecord();
-        } else if (guessCount == 7) {
+        } else if (guessCount == 2) {
             lastResult.innerHTML = 'Sorry, you lost!';
             lossRecord ++;
             setGameOver();
@@ -79,14 +79,18 @@ function resetGame() {
         resetParas[i].textContent = '';
     }
     
-    resetButton.style.display = 'none'; 
+    resetButton.style.display = 'none';
+    
+    lastResult.innerHTML = ''; 
+    lowOrHi.innerHTML = ''; 
+    invalid.innerHTML = '';    
+    guesses.innerHTML = ''; 
     
     guessField.disabled = false; 
     guessSubmit.disabled = false; 
     guessField.value = ''; 
     guessField.focus(); 
     
-    lastResult.style.backgroundColor = 'white'; 
     
     randomNumber = Math.floor(Math.random() * 99) + 1;
 }
