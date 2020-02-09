@@ -1,0 +1,107 @@
+header, nav, footer {
+    text-align:center;
+    color:black;
+}
+
+#welcomeContent {
+    text-align:left;
+}
+
+p {
+    font-size:1.2em;
+}
+nav a {
+    padding: 8px;
+    font-size:2em;
+    text-decoration:none;
+
+}
+
+nav a:hover {
+    text-decoration: underline; 
+    color: orange;
+    font-size:2.2em;
+    transition: .9s;
+}
+
+.current {
+    background-color:red;
+    padding:10px;
+    padding-top:5px;
+}
+
+#emphasis {
+    font-size:2.5em;
+    font-weight:900;
+}
+
+.flex-image {
+    display:flex;
+    justify-content:space-around;
+    background-color:#AFFF33;
+    padding: 10px;
+    margin:10px;
+}
+
+#linkedlistPic {
+    text-align: center;
+    padding: 10px;
+    border: 3px solid green;
+    outline: 2px dashed red;
+}
+
+.caption {
+    font-size:1em;
+}
+
+table {
+    margin: 0px auto;
+    
+}
+
+td {
+    padding-right: 10px; 
+    font-size:1.2em;
+}
+
+td strong {
+    color: #73127F;
+}
+
+.table-row {
+    background-color: #DAA9E0;
+}
+
+#stackOperations {
+    font-size:1.2em;
+    color: DodgerBlue;
+}
+
+#stackPicture {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    outline: 2px dashed blue;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.keyTerm {
+    text-decoration: underline blue;
+    color:orange;
+    font-weight: bold;
+}
+
+#footerText {
+    font-size:0.8em;
+    
+}
+
+#link {
+    color: #73127F;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
