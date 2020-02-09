@@ -94,12 +94,12 @@ td strong {
     font-weight: bold;
 }
 
-#footerText {
+.footerText {
     font-size:0.8em;
     
 }
 
-#link {
+.link {
     color: #73127F;
     font-weight: bold;
     text-decoration: none;
