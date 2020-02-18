@@ -34,7 +34,7 @@ $(document).ready(function(){
         } else if (item2 < 0) {
             $('#negative-number-text2').removeAttr('hidden');
             $('#invalid-input-text2').attr('hidden', true);
-            isValid = true;
+            isValid = false;
         } 
         else {
             $('#invalid-input-text2').attr('hidden', true);
