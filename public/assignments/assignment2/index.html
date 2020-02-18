@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title>Shopping Cart</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body class = "text-center"> 
+    <h1 class = "jumbotron">Shopping Cart</h1>
+    <div id ="container">
+        <!--<form onsubmit="validate(); return false;">-->
+        <form onsubmit="return false;">    
+            <!--ITEM ONE -->
+            <h2 class="title">Milk Chocolate ($5.00/each)</h2>
+            <img src = "img/chocolate.png" alt = "Milk Chocolate" id ="pic1">
+            <br><br>
+            <h3><label for="item1"><strong>Quantity</strong></label></h3>
+            <input type="text" id="item1" placeholder="0">
+            <br>
+            <small id="invalid-input-text1" hidden>Please enter a number</small>
+            <small id="negative-number-text1" hidden>Please enter a positive number</small>
+            <br><br>
+            
+            <!--ITEM TWO -->
+            <h2 class="title">Apple ($0.25/each)</h2>
+            <img src = "img/apple.png" alt = "Apple" id ="pic2">
+            <br><br>
+            <h3><label for="item2"><strong>Quantity</strong></label></h3>
+            <input type="text" id="item2" placeholder="0">
+            <br>
+            <small id="invalid-input-text2" hidden>Please enter a number</small>
+            <small id="negative-number-text2" hidden>Please enter a positive number</small>
+            <br><br>
+            
+            <!-- BUTTON -->
+            <button id="sButton" class = "btn btn-success">Submit Quiz</button>
+        </form>
+        <h2>Sales Tax: 7.25%</h2>
+        <h2 id="totalCost" class="text-info"></h2>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

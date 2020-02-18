@@ -1,0 +1,47 @@
+h1 {
+    font-family: Roboto;
+    font-weight:bold;
+    color: #0EA377;
+    padding:3px;
+    text-decoration-line:overline underline;
+    text-decoration-style:wavy;
+}
+
+body {
+    background-color:#97F5C0 !important;
+}
+
+.title {
+    color: #920EA3; 
+    font-family: Arial;
+    font-weight: bold;
+    border-style:dotted;
+    border-width:5px;
+}
+
+img {
+    background-color:#AFFF33;
+    padding: 10px;
+    margin:10px;
+}
+
+small {
+    text-decoration: underline;
+    font-weight:bold;
+}
+#invalid-input-text1, #invalid-input-text2 {
+    color:red;
+}
+
+#negative-number-text1, #negative-number-text2 {
+    color: #A30E88;
+}
+
+#totalCost {
+    font-weight:bold;
+}
+
+
+
+
+
