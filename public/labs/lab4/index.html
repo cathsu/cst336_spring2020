@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Sign Up Page </title>
+        <!-- import jQuery library so it can be used to add events and the AJAX call-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <h1> Sign Up </h1>
+        
+        <form action="welcome.html" method="post">
+            <!-- Form elements: Text, Radio Buttons, select (dropdown menu), password, submit button-->
+            First Name:     <input type="text"    name="fName"><br>
+            Last Name:      <input type="text"    name="lName"><br>
+            
+            <!-- "radio" elements use "name" attribute to group together options-->
+            Gender:         <input type="radio"   name="gender" value="m">Male
+                            <input type="radio"   name="gender" value="m">Female<br><br>
+            Zip Code:       <input type="text"    name="zip" id="zip"><br>
+            City:           <span id="city"></span><br>
+            Latitude:       <span id="latitude"></span><br>
+            Longitude:      <span id="longitude"></span><br>
+            State:
+            <select id="state" name="state">
+                <option value="">Select One</option>
+                <option value="ca">California</option>
+                <option value="ny">New York</option>
+                <option value="tx">Texas</option>
+            </select><br />
+            
+            Select a County: <select id="county"></select><br><br>
+            
+            Desired Username:     <input type="text"    id="username" name="username"><br>
+                                  <span id="usernameError"></span><br>
+            Password:             <input type="password" id="password" name="password"><br>
+            Password Again:       <input type="password" id="passwordAgain"><br>
+            
+            <input type="submit" value="Sign up!">
+        </form>
+        
+        <script>
+            
+            //Display city from API after typing a zip code
+            $('#zip').on('change', function() {
+                // alert($('#zip').val());
+                $.ajax({
+                    method: "GET",
+                    url: "https://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
+                    dataType: "json",
+                    // parameters the Web API is expecting
+                    data:  {"zip" : $("#zip").val() },
+                    success: function(result,status) {
+                  
+                        // alert(result.city);
+                        $("#city").html(result.city);
+                        $("#latitude").html(result.latitude); 
+                        $("#longitude").html(result.longitude);
+                    } 
+                });//ajax
+    
+            }); //zip    
+            
+            $("#state").on("change", function() {
+                // alert($("#state").val()); 
+                $.ajax({
+                    method: "GET",
+                    url: "https://itcdland.csumb.edu/~milara/ajax/countyList.php",
+                    dataType: "json",
+                    data:  {"state" : $("#state").val() },
+                    success: function(result,status) {
+                  
+                        // alert(result[0].cou
+                        $("#county").html("<option> Select One </option>");
+                        result.forEach(function(element){
+                            $("#county").append("<option>" + element.county + "</option");
+                        })
+                    } 
+                });//ajax
+                
+            }); //state
+            
+            $("#username").change(function() {
+                // alert($("#username").val());
+                $.ajax({
+                    method: "GET",
+                    url: "https://cst336.herokuapp.com/projects/api/usernamesAPI.php",
+                    dataType: "json",
+                    data:  {"username" : $("#username").val() },
+                    success: function(result,status) {
+                        if (result.available) {
+                            $("#usernameError").html("Username is available!");
+                            $("#usernameError").css("color", "green");
+                        } else {
+                            $("#usernameError").html("Username is unavailable!");
+                            $("#usernameError").css("color", "red");
+                        }
+                    } 
+                });//ajax
+            }); //username
+        </script>  
+    </body> 
+</html>
