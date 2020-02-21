@@ -18,6 +18,11 @@ body {
     font-weight:bold !important;
     color: #0A1240!important;
 }
+
+#zipCodeError {
+    color:red;
+    text-decoration:underline;
+}
 #usernameError {
     color:#ED3F18;
     text-decoration: underline;

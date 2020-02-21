@@ -20,7 +20,8 @@
                 <!-- "radio" elements use "name" attribute to group together options-->
                 Gender:         <input type="radio"   name="gender" value="m">Male
                                 <input type="radio"   name="gender" value="m">Female<br><br>
-                Zip Code:       <input type="text"    name="zip" id="zip"><br><br>
+                Zip Code:       <input type="text"    name="zip" id="zip"><br>
+                                <span id="zipCodeError"></span><br>
                 City:           <span id="city"></span><br><br>
                 Latitude:       <span id="latitude"></span><br><br>
                 Longitude:      <span id="longitude"></span><br><br>
@@ -36,7 +37,7 @@
                 Password Again:       <input type="password" id="passwordAgain"><br>
                                       <span id="passwordAgainError"></span><br /><br>
                 
-                <input type="submit" value="Sign up!">
+                <input id="button" type="submit" value="Sign up!">
             </form>
         </div>
         <script>
@@ -53,12 +54,19 @@
                     // parameters the Web API is expecting
                     data:  {"zip" : $("#zip").val() },
                     success: function(result,status) {
-                  
-                        // alert(result.city);
-                        $("#city").html(result.city);
-                        $("#latitude").html(result.latitude); 
-                        $("#longitude").html(result.longitude);
-                    } 
+                        if (result) {
+                            // alert(result.city);
+                            $("#zipCodeError").html("");
+                            $("#city").html(result.city);
+                            $("#latitude").html(result.latitude); 
+                            $("#longitude").html(result.longitude);
+                        } else {
+                            $("#zipCodeError").html("Zip code not found!");
+                            $("#city").html("");
+                            $("#latitude").html(""); 
+                            $("#longitude").html("");
+                        }
+                    }
                 });//ajax
     
             }); //zip    
