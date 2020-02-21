@@ -2,44 +2,46 @@
 <html>
     <head>
         <title> Sign Up Page </title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" 
         <!-- import jQuery library so it can be used to add events and the AJAX call-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     </head>
     <body>
-        <h1> Sign Up </h1>
-        
-        <form action="welcome.html" method="post">
-            <!-- Form elements: Text, Radio Buttons, select (dropdown menu), password, submit button-->
-            First Name:     <input type="text"    name="fName"><br>
-            Last Name:      <input type="text"    name="lName"><br>
+        <div class= "container">
+            <h1 class = "jumbotron"> Sign Up </h1>
             
-            <!-- "radio" elements use "name" attribute to group together options-->
-            Gender:         <input type="radio"   name="gender" value="m">Male
-                            <input type="radio"   name="gender" value="m">Female<br><br>
-            Zip Code:       <input type="text"    name="zip" id="zip"><br>
-            City:           <span id="city"></span><br>
-            Latitude:       <span id="latitude"></span><br>
-            Longitude:      <span id="longitude"></span><br>
-            State:
-            <select id="state" name="state">
-                <option value="">Select One</option>
-                <option value="ca">California</option>
-                <option value="ny">New York</option>
-                <option value="tx">Texas</option>
-            </select><br />
-            
-            Select a County: <select id="county"></select><br><br>
-            
-            Desired Username:     <input type="text"    id="username" name="username"><br>
-                                  <span id="usernameError"></span><br>
-            Password:             <input type="password" id="password" name="password"><br>
-            Password Again:       <input type="password" id="passwordAgain"><br>
-            
-            <input type="submit" value="Sign up!">
-        </form>
-        
+            <form id="signupForm" method="get" action="welcome.html" >
+                <!-- Form elements: Text, Radio Buttons, select (dropdown menu), password, submit button-->
+                First Name:     <input type="text"    name="fName"><br><br>
+                Last Name:      <input type="text"    name="lName"><br><br>
+                
+                <!-- "radio" elements use "name" attribute to group together options-->
+                Gender:         <input type="radio"   name="gender" value="m">Male
+                                <input type="radio"   name="gender" value="m">Female<br><br>
+                Zip Code:       <input type="text"    name="zip" id="zip"><br><br>
+                City:           <span id="city"></span><br><br>
+                Latitude:       <span id="latitude"></span><br><br>
+                Longitude:      <span id="longitude"></span><br><br>
+                State:          <select id="state" name="state"></select><br><br>
+    
+                
+                Select a County: <select id="county"></select><br><br>
+                
+                Desired Username:     <input type="text"    id="username" name="username"><br>
+                                      <span id="usernameError"></span><br>
+                Password:             <input type="password" id="password" name="password"><br>
+                                      <span id="passwordLengthError"></span><br>
+                Password Again:       <input type="password" id="passwordAgain"><br>
+                                      <span id="passwordAgainError"></span><br /><br>
+                
+                <input id="button" type="submit" value="Sign up!">
+            </form>
+        </div>
         <script>
+        
+            var usernameAvailable = false;
             
             //Display city from API after typing a zip code
             $('#zip').on('change', function() {
@@ -60,6 +62,24 @@
                 });//ajax
     
             }); //zip    
+            
+
+            $.ajax({
+                method: "GET",
+                url: "https://itcdland.csumb.edu/~milara/ajax/states.php",
+                dataType: "json",
+                data:  {"state" : $("#state").val() },
+                success: function(result,status) {
+              
+                    // alert(result[0].cou
+                    $("#state").html("<option> Select One </option>");
+                    result.forEach(function(element){
+                        $("#state").append("<option>" + element.state + "</option");
+                    })
+                } 
+            });//ajax
+                
+
             
             $("#state").on("change", function() {
                 // alert($("#state").val()); 
@@ -91,13 +111,44 @@
                         if (result.available) {
                             $("#usernameError").html("Username is available!");
                             $("#usernameError").css("color", "green");
+                            usernameAvailable = true;
                         } else {
                             $("#usernameError").html("Username is unavailable!");
                             $("#usernameError").css("color", "red");
+                            usernameAvailable = false;
                         }
                     } 
                 });//ajax
             }); //username
+            
+            $("#signupForm").on("submit", function(e) {
+               if (!isFormValid()) {
+                   e.preventDefault();
+               }
+            });
+            
+            function isFormValid() {
+                isValid = true; 
+                if (!usernameAvailable) {
+                    isValid = false;
+                }
+                
+                if ($("#username").val().length == 0) {
+                   isValid = false; 
+                   $("#usernameError").html("Username is required");
+                }
+                
+                if ($("#password").val() != $("#passwordAgain").val()) {
+                    $("#passwordAgainError").html("Password Mismatch!"); 
+                    isValid = false;
+                }
+                
+                if ($("#password").val().length < 6) {
+                    $("#passwordLengthError").html("Password must be at least 6 characters long!");
+                    isValid = false;
+                }
+                return isValid;
+            }
         </script>  
     </body> 
 </html>

@@ -1,0 +1,42 @@
+/*
+    Boostrap classes: 
+    1) container
+    2) jumbotron
+    3)
+*/
+
+h1 {
+    color: #871AF5 !important;
+    text-align: center;
+    background-color:#56F51A !important;
+    border: 3px dotted #F57A1A !important;
+    font-family:Roberto !important;
+    font-size:2.0em;
+}
+body {
+    background-color: #14CED1 !important;
+    font-weight:bold !important;
+    color: #0A1240!important;
+}
+#usernameError {
+    color:#ED3F18;
+    text-decoration: underline;
+}
+
+#passwordLengthError {
+    color: #EE4420;
+    text-decoration:underline;
+}
+
+#passwordAgainError {
+    color: #BF3213;
+    text-decoration:underline;
+}
+
+#button {
+    background-color: #4CAF50;
+    padding: 15px 32px;
+    font-size:25px !important;
+    
+}
+
