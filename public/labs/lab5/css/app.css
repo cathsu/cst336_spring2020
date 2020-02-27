@@ -1,0 +1,15 @@
+/*Source: https://stackoverflow.com/questions/45021324/center-text-above-images*/
+
+h4 {
+    text-decoration: underline;
+}
+.likes {
+    font-weight:bold;
+    display: inline-block;
+    text-align: center;
+}
+
+/*all likes that are children of img*/
+img {
+    display:block;
+}

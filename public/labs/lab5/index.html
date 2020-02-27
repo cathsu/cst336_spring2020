@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body class="container">
+        <h1>Pixaby Image Search</h1>
+        <form onsubmit = "getInfo(); return false;" class= "justify-content-center">
+            <div class="form-group row">
+                <label for="inputKeyword" class="col-sm-2 col-form-label">Keyword</label>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" id="keyword" placeholder="Keyword">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="orientation" class="col-sm-2 col-form-label">Orientation</label>
+                <div class="col-sm-5">
+                    <select id="orientation">
+                      <option value="horizontal">Horizontal</option>
+                      <option value="vertical">Vertical</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+            <div id="results"></div>
+        </form>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>
