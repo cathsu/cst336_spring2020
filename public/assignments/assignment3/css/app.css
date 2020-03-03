@@ -1,0 +1,51 @@
+#title {
+    text-align: center !important;
+    background: #21DA9F !important;
+    color: #082D0E;
+    border-style: dotted !important; 
+}
+
+body {
+    background: #B8F19C !important;
+}
+
+#label {
+    font-weight:bold !important;
+    font-size: 20px !important;
+    text-decoration: underline;
+    color: #A08913;
+}
+.female {
+    background:pink;
+}
+
+.male {
+    background:#33DDFF;
+}
+
+.list {
+    padding: 5px !important;
+}
+#output {
+    text-align: center !important;
+    padding: 10px !important;
+}
+
+.femaleList {
+    color: #E72095;
+    font-weight: bold;
+}
+
+.maleList {
+    color: #3220E7;
+    font-weight:bold;
+}
+
+p {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    font-weight:bold;
+}
