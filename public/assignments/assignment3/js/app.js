@@ -4,7 +4,7 @@ function getGender() {
     var name = $("#inputName").val();
     var output = $("#output"); 
     
-    output.empty();
+    
     
     var URL = "https://www.behindthename.com/api/lookup.json"; 
     var API_KEY = "ca122000358"; 
@@ -15,6 +15,7 @@ function getGender() {
         data: { "key": API_KEY, 
                 "name": name},
         success: function(data) {
+            output.empty();
             var result = data[0]; 
             console.log(data);
     
@@ -22,6 +23,12 @@ function getGender() {
             
             if (data.error_code === 50) {
                 output.append('<h4 class ="error">Error: '+ data.error + '</h4>');
+                if (output.hasClass('female')) {
+                    output.removeClass('female');
+                }
+                if (output.hasClass('male')) {
+                    output.removeClass('male');
+                }
                 
             }
             else {
