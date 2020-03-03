@@ -27,12 +27,10 @@ function getGender() {
                 if (result.gender == 'f') {
                     output.append('<h5>' + result.name + ' is usually associated with the female gender</h5>');
                     output.addClass('femaleBackground');
-                    // output.removeClass('maleBackground');
                 }
                 else if (result.gender == 'm') {
                     output.append('<h5>' + result.name + ' is usually associated with the male gender</h5>');
                     output.addClass('maleBackground');
-                    // output.removeClass('femaleBackground');
                 }
                 else { //result.gender == 'fm' or 'mf'
                     output.append('<h5>' + result.name + ' is associated with both males and females</h5>');
@@ -48,7 +46,7 @@ function getGender() {
                         var country = element.usage_full;
                         output.append('<li class="list">' + country + '</li>')
                         
-                    }) //data.usages
+                    }) 
                 }
                 
                 // if name is associated with both genders, print out culture and associated gender
