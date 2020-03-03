@@ -15,30 +15,42 @@ body {
     text-decoration: underline;
     color: #A08913;
 }
-.female {
+.femaleBackground {
     background:pink;
 }
 
-.male {
-    background:#33DDFF;
+.maleBackground {
+    background:#09D1F5;
+}
+
+.bothBackground {
+    background: #20E7A8;
 }
 
 .list {
     padding: 5px !important;
 }
-#output {
+
+#output{
     text-align: center !important;
     padding: 10px !important;
 }
 
+li {
+    font-weight:bold;
+}
 .femaleList {
     color: #E72095;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .maleList {
     color: #3220E7;
-    font-weight:bold;
+    /*font-weight:bold;*/
+}
+
+.bothList {
+    color: #0D7453;
 }
 
 p {
