@@ -15,7 +15,8 @@ function getInfo() {
         success: function(data) {
             console.log(data);
             var index = "ISBN:" + ISBN;
-            var coverURL = data[index].cover["large"];
+            var coverURL = data[index].cover["medium"];
+            console.log(coverURL);
             var title = data[index].title;
             var author = data[index].authors["0"].name;
             var year = data[index].publish_date;
