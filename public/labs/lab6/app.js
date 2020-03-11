@@ -20,11 +20,11 @@ app.get("/mercury", function(req, res) {
 }); 
 
 app.get("/venus", function(req, res) {
-    res.send("venus.html"); 
+    res.render("venus.html"); 
 });
 
 app.get("/earth", function(req, res) {
-    res.send("earth.html"); 
+    res.render("earth.html"); 
 });
 
 //server listener
