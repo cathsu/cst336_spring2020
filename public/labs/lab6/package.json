@@ -1,0 +1,23 @@
+{
+  "name": "lab6",
+  "version": "1.0.0",
+  "description": "Create a \"Solar System\" website using Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cathsu/cst336_spring2020.git"
+  },
+  "author": "Cathy Hsu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cathsu/cst336_spring2020/issues"
+  },
+  "homepage": "https://github.com/cathsu/cst336_spring2020#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
